@@ -29,6 +29,7 @@ import {
   Star,
   Tag,
 } from "lucide-react";
+import { Sidebar } from "@/components/sidebar";
 
 type Note = {
   id: number;
@@ -96,76 +97,17 @@ const recentNotes: Note[] = [
 export default function RecentNotesPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const Sidebar = () => (
-    <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center space-x-4">
-          <Avatar className="h-10 w-10 border-2 border-amber-500">
-            <AvatarImage src="/placeholder-user.jpg" alt="User" />
-            <AvatarFallback>AV</AvatarFallback>
-          </Avatar>
-          <div>
-            <h2 className="font-bold text-slate-100">Akshay Vs</h2>
-            <p className="text-xs text-amber-400">Premium User</p>
-          </div>
-        </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="lg:hidden text-slate-400 hover:text-slate-100"
-          onClick={() => setIsSidebarOpen(false)}
-        >
-          <ChevronRight className="h-6 w-6" />
-        </Button>
-      </div>
-      <nav className="space-y-4 flex-grow">
-        <Button
-          variant="ghost"
-          className="w-full justify-start text-slate-300 hover:text-amber-400 hover:bg-slate-900"
-        >
-          <Clock className="mr-2 h-4 w-4" />
-          Recent Notes
-        </Button>
-        <Button
-          variant="ghost"
-          className="w-full justify-start text-slate-300 hover:text-amber-400 hover:bg-slate-900"
-        >
-          <Star className="mr-2 h-4 w-4" />
-          Favorites
-        </Button>
-        <Button
-          variant="ghost"
-          className="w-full justify-start text-slate-300 hover:text-amber-400 hover:bg-slate-900"
-        >
-          <Lock className="mr-2 h-4 w-4" />
-          Private Notes
-        </Button>
-        <Button
-          variant="ghost"
-          className="w-full justify-start text-slate-300 hover:text-amber-400 hover:bg-slate-900"
-        >
-          <Tag className="mr-2 h-4 w-4" />
-          Tags
-        </Button>
-      </nav>
-      <Button className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold">
-        <Plus className="mr-2 h-4 w-4" />
-        Create New Note
-      </Button>
-    </div>
-  );
-
   return (
     <div className="flex h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100">
       <aside className="hidden lg:block w-64 bg-slate-950 p-4">
-        <Sidebar />
+        <Sidebar currentPage="recent" />
       </aside>
       <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
         <SheetContent
           side="left"
           className="w-64 p-4 bg-slate-950 text-slate-100"
         >
-          <Sidebar />
+          <Sidebar currentPage="recent" />
         </SheetContent>
       </Sheet>
       <main className="flex-grow p-4 lg:p-6 overflow-hidden">
@@ -185,7 +127,7 @@ export default function RecentNotesPage() {
                 <DialogHeader>
                   <DialogTitle>Menu</DialogTitle>
                 </DialogHeader>
-                <Sidebar />
+                <Sidebar currentPage="recent" />
               </DialogContent>
             </Dialog>
             <h1 className="text-2xl lg:text-3xl font-bold text-amber-400">
