@@ -4,13 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Bell, Menu, Search } from "lucide-react";
 import { Sidebar } from "@/components/sidebar";
 
@@ -92,23 +85,14 @@ export default function InboxPage() {
       <main className="flex-grow p-4 lg:p-6 overflow-hidden">
         <header className="flex justify-between items-center mb-6">
           <div className="flex items-center">
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="lg:hidden mr-2 text-slate-400 hover:text-slate-100"
-                >
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="bg-slate-950 text-slate-100 border-slate-800">
-                <DialogHeader>
-                  <DialogTitle>Menu</DialogTitle>
-                </DialogHeader>
-                <Sidebar currentPage="Inbox" />
-              </DialogContent>
-            </Dialog>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden mr-2 text-slate-400 hover:text-slate-100"
+              onClick={() => setIsSidebarOpen(true)}
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
             <h1 className="text-2xl lg:text-3xl font-bold text-amber-400">
               Inbox
             </h1>
