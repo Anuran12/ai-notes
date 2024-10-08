@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -18,17 +17,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  BookOpen,
-  ChevronRight,
-  Clock,
-  Lock,
-  Menu,
-  Plus,
-  Search,
-  Star,
-  Tag,
-} from "lucide-react";
+import { BookOpen, Lock, Menu, Search } from "lucide-react";
 import { Sidebar } from "@/components/sidebar";
 
 type Note = {

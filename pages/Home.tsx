@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,17 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
-import {
-  BookOpen,
-  Check,
-  ChevronRight,
-  Clock,
-  Lock,
-  Menu,
-  Plus,
-  Search,
-  Star,
-} from "lucide-react";
+import { BookOpen, ChevronRight, Lock, Menu, Search, Star } from "lucide-react";
 import Link from "next/link";
 import { Sidebar } from "@/components/sidebar";
 
