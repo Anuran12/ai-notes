@@ -79,14 +79,14 @@ export default function InboxPage() {
   return (
     <div className="flex h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100">
       <aside className="hidden lg:block w-64 bg-slate-950 p-4">
-        <Sidebar currentPage="inbox" />
+        <Sidebar currentPage="Inbox" />
       </aside>
       <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
         <SheetContent
           side="left"
           className="w-64 p-4 bg-slate-950 text-slate-100"
         >
-          <Sidebar currentPage="inbox" />
+          <Sidebar currentPage="Inbox" />
         </SheetContent>
       </Sheet>
       <main className="flex-grow p-4 lg:p-6 overflow-hidden">
@@ -106,7 +106,7 @@ export default function InboxPage() {
                 <DialogHeader>
                   <DialogTitle>Menu</DialogTitle>
                 </DialogHeader>
-                <Sidebar currentPage="inbox" />
+                <Sidebar currentPage="Inbox" />
               </DialogContent>
             </Dialog>
             <h1 className="text-2xl lg:text-3xl font-bold text-amber-400">

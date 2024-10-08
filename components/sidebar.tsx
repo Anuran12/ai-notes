@@ -4,7 +4,7 @@ import { Clock, Plus, Star, Tag, Home, Inbox } from "lucide-react";
 import Link from "next/link";
 
 type SidebarProps = {
-  currentPage: "recent" | "todo" | "tags" | "Inbox" | "inbox" | "";
+  currentPage: "recent" | "todo" | "tags" | "Inbox" | "";
 };
 
 export function Sidebar({ currentPage }: SidebarProps) {
