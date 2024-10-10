@@ -126,8 +126,8 @@ export default function RecentNotesPage() {
         </SheetContent>
       </Sheet>
       <main className="flex-grow p-4 lg:p-6 overflow-hidden">
-        <header className="flex justify-between items-center mb-6">
-          <div className="flex items-center">
+        <header className="flex flex-col sm:flex-row justify-between items-center mb-6">
+          <div className="flex items-center self-start">
             <Button
               variant="ghost"
               size="icon"
@@ -162,7 +162,7 @@ export default function RecentNotesPage() {
               variant="outline"
               size="icon"
               onClick={toggleView}
-              className="bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-amber-400"
+              className="bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-amber-400 hidden sm:flex"
             >
               {isGridView ? (
                 <LayoutList className="h-4 w-4" />
