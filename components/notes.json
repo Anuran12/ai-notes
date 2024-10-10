@@ -1,0 +1,49 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Project Brainstorming",
+      "content": "Ideas for the new app: 1. User authentication 2. Real-time collaboration 3. Offline mode",
+      "date": "2023-06-15",
+      "tags": ["work", "ideas"],
+      "isPrivate": false,
+      "inNotebook": true
+    },
+    {
+      "id": 2,
+      "title": "Meeting Notes: Team Sync",
+      "content": "Discussed project timeline, assigned tasks, and set next meeting for Friday.",
+      "date": "2023-06-14",
+      "tags": ["work", "meeting"],
+      "isPrivate": true,
+      "inNotebook": false
+    },
+    {
+      "id": 3,
+      "title": "Personal Goals",
+      "content": "1. Read 2 books per month 2. Exercise 3 times a week 3. Learn a new language",
+      "date": "2023-06-13",
+      "tags": ["personal", "goals"],
+      "isPrivate": true,
+      "inNotebook": false
+    },
+    {
+      "id": 4,
+      "title": "Recipe: Chocolate Chip Cookies",
+      "content": "Ingredients: flour, sugar, butter, chocolate chips. Mix dry ingredients...",
+      "date": "2023-06-12",
+      "tags": ["personal", "recipe"],
+      "isPrivate": false,
+      "inNotebook": true
+    },
+    {
+      "id": 5,
+      "title": "Book Notes: The Pragmatic Programmer",
+      "content": "Key takeaways: 1. Care about your craft 2. Think about your work 3. Provide options, don't make lame excuses",
+      "date": "2023-06-11",
+      "tags": ["learning", "book"],
+      "isPrivate": false,
+      "inNotebook": true
+    }
+  ]
+}

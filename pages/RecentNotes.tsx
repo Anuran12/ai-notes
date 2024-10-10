@@ -15,6 +15,7 @@ import { BookOpen, Lock, Menu, Search } from "lucide-react";
 import { Sidebar } from "@/components/sidebar";
 import { LayoutGrid, LayoutList, Filter } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import notesData from "@/components/notes.json";
 
 type Note = {
   id: number;
@@ -26,71 +27,20 @@ type Note = {
   inNotebook: boolean;
 };
 
-const recentNotes: Note[] = [
-  {
-    id: 1,
-    title: "Project Brainstorming",
-    content:
-      "Ideas for the new app: 1. User authentication 2. Real-time collaboration 3. Offline mode",
-    date: "2023-06-15",
-    tags: ["work", "ideas"],
-    isPrivate: false,
-    inNotebook: true,
-  },
-  {
-    id: 2,
-    title: "Meeting Notes: Team Sync",
-    content:
-      "Discussed project timeline, assigned tasks, and set next meeting for Friday.",
-    date: "2023-06-14",
-    tags: ["work", "meeting"],
-    isPrivate: true,
-    inNotebook: false,
-  },
-  {
-    id: 3,
-    title: "Personal Goals",
-    content:
-      "1. Read 2 books per month 2. Exercise 3 times a week 3. Learn a new language",
-    date: "2023-06-13",
-    tags: ["personal", "goals"],
-    isPrivate: true,
-    inNotebook: false,
-  },
-  {
-    id: 4,
-    title: "Recipe: Chocolate Chip Cookies",
-    content:
-      "Ingredients: flour, sugar, butter, chocolate chips. Mix dry ingredients...",
-    date: "2023-06-12",
-    tags: ["personal", "recipe"],
-    isPrivate: false,
-    inNotebook: true,
-  },
-  {
-    id: 5,
-    title: "Book Notes: The Pragmatic Programmer",
-    content:
-      "Key takeaways: 1. Care about your craft 2. Think about your work 3. Provide options, don't make lame excuses",
-    date: "2023-06-11",
-    tags: ["learning", "book"],
-    isPrivate: false,
-    inNotebook: true,
-  },
-];
-
 export default function RecentNotesPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isGridView, setIsGridView] = useState(true);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [filteredNotes, setFilteredNotes] = useState<Note[]>(recentNotes);
+  const [filteredNotes, setFilteredNotes] = useState<Note[]>(notesData.notes);
   const [searchTerm, setSearchTerm] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const allTags = Array.from(new Set(recentNotes.flatMap((note) => note.tags)));
+  const allTags = Array.from(
+    new Set(notesData.notes.flatMap((note) => note.tags))
+  );
 
   useEffect(() => {
-    const filtered = recentNotes.filter(
+    const filtered = notesData.notes.filter(
       (note) =>
         (selectedTags.length === 0 ||
           note.tags.some((tag) => selectedTags.includes(tag))) &&
